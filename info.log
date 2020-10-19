@@ -1,0 +1,12 @@
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Bookmark with id 123 deleted.","level":"info"}
+{"message":"Bookmark with id 2d0bac7a-75c4-4429-a562-222dd72335cc created","level":"info"}
+{"message":"Invalid rating supplied","level":"error"}
+{"message":"Bookmark with id a815d734-9a8c-4ceb-b2c7-4d74240d201a created","level":"info"}
+{"message":"Invalid URL supplied","level":"error"}
+{"message":"Bookmark with id 52f24aae-fc73-4d00-8d5b-9a68b77de0d6 created","level":"info"}
+{"message":"Bookmark with id 4350ce01-2655-442e-b278-963fb30fd4a9 created","level":"info"}
+{"message":"Invalid rating supplied","level":"error"}
+{"message":"Rating is required","level":"error"}
+{"message":"Invalid rating supplied","level":"error"}
+{"message":"Invalid rating supplied","level":"error"}
