@@ -3,14 +3,19 @@ const logger = require('../logger');
 const { isWebUri } = require('valid-url');
 const { v4: uuid } = require('uuid');
 const { bookmarks } = require('../store');
-
-const bookmarkRouter = express.Router();
+const BookmarksService = require('./bookmarks-service')
+const bookmarksRouter = express.Router();
 const bodyParser = express.json();
 
-bookmarkRouter
+bookmarksRouter
   .route('/bookmarks')
-  .get((req, res) => {
-    res.json(bookmarks);
+  .get((req, res, next) => {
+    const knexInstance = req.app.get('db')
+    BookmarksService.getAllBookmarks(knexInstance)
+      .then(bookmarks => {
+        res.json(bookmarks)
+      })
+      .catch(next)
   })
   .post(bodyParser, (req, res) => {
     const { title, description, url, rating } = req.body;
@@ -45,20 +50,22 @@ bookmarkRouter
     res.status(201)
       .location(`http://localhost:8000/bookmark/${bookmark.id}`)
       .json(bookmark);
-
-
   });
 
-bookmarkRouter
+bookmarksRouter
   .route('/bookmarks/:id')
-  .get((req, res) => {
-    const { id } = req.params;
-    const bookmark = bookmarks.find(b => b.id == id);
-    if (!bookmark) {
-      logger.error(`Bookmark with id ${id} not found`);
-      return res.status(404).send('Bookmark Not Found');
-    }
-    res.json(bookmark);
+  .get((req, res, next) => {
+    const knexInstance = req.app.get('db')
+  BookmarksService.getById(knexInstance, req.params.id)
+    .then(bookmark => {
+      if (!bookmark) {
+        return res.status(404).json({
+          error: { message: `Bookmark doesn't exist` }
+        })
+      }
+      res.json(bookmark)
+    })
+    .catch(next)
   })
   .delete((req, res) => {
     const { id } = req.params;
@@ -74,4 +81,4 @@ bookmarkRouter
     res.status(204).end();
   });
 
-module.exports = bookmarkRouter;
+module.exports = bookmarksRouter;

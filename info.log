@@ -10,3 +10,7 @@
 {"message":"Rating is required","level":"error"}
 {"message":"Invalid rating supplied","level":"error"}
 {"message":"Invalid rating supplied","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"next is not defined","level":"error"}
+{"message":"ArticlesService is not defined","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
