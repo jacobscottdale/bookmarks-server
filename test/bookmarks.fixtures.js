@@ -5,21 +5,21 @@ function makeBookmarksArray() {
       title: 'hey',
       url: 'url',
       description: 'content',
-      rating: '5'
+      rating: 5
     },
     {
       id: 2,
       title: 'hey2',
       url: 'url2',
       description: 'content2',
-      rating: '4'
+      rating: 4
     },
     {
       id: 3,
       title: 'hey3',
       url: 'url3',
       description: 'content3',
-      rating: '3'
+      rating: 3
     }
   ];
   

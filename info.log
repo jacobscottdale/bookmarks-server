@@ -14,3 +14,14 @@
 {"message":"next is not defined","level":"error"}
 {"message":"ArticlesService is not defined","level":"error"}
 {"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"bookmark is not defined","level":"error"}
+{"message":"bookmark is not defined","level":"error"}
+{"message":"bookmark is not defined","level":"error"}
+{"message":"bookmark is not defined","level":"error"}
+{"message":"next is not defined","level":"error"}
+{"message":"next is not defined","level":"error"}
+{"message":"delete from  where \"id\" = $1 - syntax error at or near \"where\"","level":"error"}
+{"message":"delete from  where \"id\" = $1 - syntax error at or near \"where\"","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
